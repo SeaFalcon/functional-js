@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.5/lodash.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.5/lodash.fp.js'></script>
+  <script>
+    const fp = _.noConflict(); // fp의 함수들을 별도로 사용하기 위한 조치
+
+    [...Array(10).keys()].map(num => Math.pow(num, 2));
+
+    var products = [
+      {
+        name: 1,
+        price: 1000
+      },
+      {
+        name: 2,
+        price: 2000
+      },
+      {
+        name: 3,
+        price: 3000
+      }
+    ];
+    _.map(products, v => v.name);
+    fp.map(v => v.name)(products);
+
+    _.filter(products, p => p.price >= 2000);
+    fp.filter(p => p.price >= 2000)(products);
+
+
+  </script>
+</body>
+
+</html>
